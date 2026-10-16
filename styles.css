@@ -1,0 +1,163 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f1ea;
+  color: #1f2521;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #f4f1ea;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 560px);
+  background: #fffdf8;
+  border: 1px solid #d8d1c2;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(45, 37, 24, 0.08);
+}
+
+.panel__header,
+.status-row,
+.actions,
+.controls__middle {
+  display: flex;
+  align-items: center;
+}
+
+.panel__header,
+.status-row {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6f756d;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.scoreboard {
+  min-width: 88px;
+  text-align: right;
+}
+
+.scoreboard__label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6f756d;
+}
+
+#score {
+  font-size: 2rem;
+}
+
+.status-row {
+  margin: 20px 0 16px;
+}
+
+#status {
+  margin: 0;
+  color: #485048;
+}
+
+.actions {
+  gap: 8px;
+}
+
+button {
+  border: 1px solid #b9b09e;
+  background: #f8f4ec;
+  color: #1f2521;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #efe8db;
+}
+
+button:focus-visible {
+  outline: 2px solid #2b6f3e;
+  outline-offset: 2px;
+}
+
+.board {
+  --grid-size: 20;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  gap: 2px;
+  aspect-ratio: 1;
+  width: 100%;
+  padding: 10px;
+  background: #d7d1c6;
+  border-radius: 14px;
+}
+
+.cell {
+  border-radius: 4px;
+  background: #f7f3eb;
+}
+
+.cell--snake {
+  background: #2f7d44;
+}
+
+.cell--head {
+  background: #245e34;
+}
+
+.cell--food {
+  background: #cf5335;
+}
+
+.controls {
+  display: none;
+  margin-top: 16px;
+  justify-content: center;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.controls button {
+  min-width: 56px;
+}
+
+.controls__middle {
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 640px), (pointer: coarse) {
+  .status-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controls {
+    display: flex;
+  }
+}
